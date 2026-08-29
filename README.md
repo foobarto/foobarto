@@ -18,15 +18,13 @@ Most of my public work sits at the security-plus-AI-agents seam: isolated runtim
 ## Latest signals
 
 ```bash
-curl -fsSL https://foobarto.me/profile-signals.json \
-  | jq -r '.signals | sort_by(.date) | reverse[] | [.date, ("[" + (.kind | ascii_downcase) + "]"), .title] | @tsv' \
-  | column -t -s $'\t'
+curl -fsS https://foobarto.me/profile-signals.json | jq -c '.signals|sort_by(.date)|reverse[]'
 ```
 
-- `2026-08-28` `writing` **[Ignorance Is a Security Boundary](https://foobarto.me/blog/2026/ignorance-is-a-security-boundary/)**
-- `2026-08-18` `disclosure` **[Remote-controlled VS Code command execution via an unsigned announcement feed in jlcodes.antigravity-cockpit](https://foobarto.me/disclosures/vscode-antigravity-cockpit-command-execution/)**
-- `2026-05-26` `research` **[Fluency as Attack Surface](https://doi.org/10.5281/zenodo.20397965)**
-- `2026-05-17` `htb` **[atlas — HTB machine writeup](https://foobarto.me/htb/machines/atlas/)**
+- `2026-08-28` `writing` — [Ignorance Is a Security Boundary](https://foobarto.me/blog/2026/ignorance-is-a-security-boundary/)
+- `2026-08-18` `disclosure` — [Remote-controlled VS Code command execution via an unsigned announcement feed in jlcodes.antigravity-cockpit](https://foobarto.me/disclosures/vscode-antigravity-cockpit-command-execution/)
+- `2026-05-26` `research` — [Fluency as Attack Surface](https://doi.org/10.5281/zenodo.20397965)
+- `2026-05-17` `htb` — [atlas — HTB machine writeup](https://foobarto.me/htb/machines/atlas/)
 
 [blog/](https://foobarto.me/blog/) · [research/](https://foobarto.me/research/) · [disclosures/](https://foobarto.me/disclosures/) · [htb/](https://foobarto.me/htb/)
 <!-- profile-signals:end -->

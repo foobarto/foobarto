@@ -406,17 +406,15 @@ def signals_block(signals: Iterable[Signal]) -> str:
         "## Latest signals",
         "",
         "```bash",
-        f"curl -fsSL {PROFILE_DATA_URL} \\",
-        "  | jq -r '.signals | sort_by(.date) | reverse[] | "
-        "[.date, (\"[\" + (.kind | ascii_downcase) + \"]\"), .title] | @tsv' \\",
-        "  | column -t -s $'\\t'",
+        f"curl -fsS {PROFILE_DATA_URL} "
+        "| jq -c '.signals|sort_by(.date)|reverse[]'",
         "```",
         "",
     ]
     for signal in latest:
         lines.append(
             f"- `{signal.date}` `{markdown_escape(signal.kind.lower())}` "
-            f"**[{markdown_escape(signal.title)}]({signal.url})**"
+            f"— [{markdown_escape(signal.title)}]({signal.url})"
         )
     lines.extend(
         (

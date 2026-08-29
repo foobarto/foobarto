@@ -162,7 +162,8 @@ class UpdateProfileTests(unittest.TestCase):
             self.assertIn("Fluency as Attack Surface", readme)
             self.assertEqual(
                 readme.count(
-                    "curl -fsSL https://foobarto.me/profile-signals.json"
+                    "curl -fsS https://foobarto.me/profile-signals.json "
+                    "| jq -c '.signals|sort_by(.date)|reverse[]'"
                 ),
                 1,
             )
