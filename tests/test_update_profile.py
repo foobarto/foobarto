@@ -52,6 +52,12 @@ def payload(*, synced_at: str = "2026-08-29T06:02:02Z") -> dict[str, object]:
                 "date": "2026-08-18",
                 "url": "https://foobarto.me/disclosures/vscode-antigravity-cockpit-command-execution/",
             },
+            {
+                "kind": "HTB",
+                "title": "Atlas — HTB machine writeup",
+                "date": "2026-05-17",
+                "url": "https://foobarto.me/htb/machines/atlas/",
+            },
         ],
     }
 
@@ -94,6 +100,12 @@ class UpdateProfileTests(unittest.TestCase):
         data = payload()
         data["signals"][2]["kind"] = "Writing"
         with self.assertRaisesRegex(ValueError, "duplicate"):
+            update_profile.parse_payload(json.dumps(data), now=NOW)
+
+    def test_payload_requires_all_four_signal_kinds(self) -> None:
+        data = payload()
+        data["signals"].pop()
+        with self.assertRaisesRegex(ValueError, "exactly four"):
             update_profile.parse_payload(json.dumps(data), now=NOW)
 
     def test_markdown_metacharacters_are_treated_as_text(self) -> None:
@@ -148,6 +160,28 @@ class UpdateProfileTests(unittest.TestCase):
             readme = root.joinpath("README.md").read_text(encoding="utf-8")
             self.assertIn("Ignorance Is a Security Boundary", readme)
             self.assertIn("Fluency as Attack Surface", readme)
+            self.assertEqual(
+                readme.count(
+                    "curl -fsSL https://foobarto.me/profile-signals.json"
+                ),
+                1,
+            )
+            self.assertEqual(readme.count("\n- `2026-"), 4)
+            self.assertIn(
+                "https://foobarto.me/htb/machines/atlas/", readme
+            )
+            self.assertLess(
+                readme.index("Ignorance Is a Security Boundary"),
+                readme.index("Remote-controlled VS Code command execution"),
+            )
+            self.assertLess(
+                readme.index("Remote-controlled VS Code command execution"),
+                readme.index("Fluency as Attack Surface"),
+            )
+            self.assertLess(
+                readme.index("Fluency as Attack Surface"),
+                readme.index("Atlas — HTB machine writeup"),
+            )
             self.assertNotIn("placeholder", readme)
 
 

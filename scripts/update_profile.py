@@ -237,12 +237,13 @@ def parse_payload(
     )
 
     raw_signals = payload.get("signals")
-    if not isinstance(raw_signals, list) or len(raw_signals) != 3:
-        raise ValueError("expected exactly three profile signals")
+    if not isinstance(raw_signals, list) or len(raw_signals) != 4:
+        raise ValueError("expected exactly four profile signals")
     allowed_links = {
         "Writing": {"foobarto.me"},
         "Research": {"doi.org", "foobarto.me"},
         "Disclosure": {"foobarto.me"},
+        "HTB": {"foobarto.me"},
     }
     signals: list[Signal] = []
     seen: set[str] = set()
@@ -400,18 +401,30 @@ def console_block(profile: HtbProfile) -> str:
 
 
 def signals_block(signals: Iterable[Signal]) -> str:
-    lines = ["## Latest signals", ""]
-    for signal in signals:
+    latest = sorted(signals, key=lambda signal: signal.date, reverse=True)
+    lines = [
+        "## Latest signals",
+        "",
+        "```bash",
+        f"curl -fsSL {PROFILE_DATA_URL} \\",
+        "  | jq -r '.signals | sort_by(.date) | reverse[] | "
+        "[.date, (\"[\" + (.kind | ascii_downcase) + \"]\"), .title] | @tsv' \\",
+        "  | column -t -s $'\\t'",
+        "```",
+        "",
+    ]
+    for signal in latest:
         lines.append(
-            f"- **{markdown_escape(signal.kind)} · {signal.date}** — "
-            f"[{markdown_escape(signal.title)}]({signal.url})"
+            f"- `{signal.date}` `{markdown_escape(signal.kind.lower())}` "
+            f"**[{markdown_escape(signal.title)}]({signal.url})**"
         )
     lines.extend(
         (
             "",
-            "[All writing](https://foobarto.me/blog/) · "
-            "[Research](https://foobarto.me/research/) · "
-            "[Public disclosures](https://foobarto.me/disclosures/)",
+            "[blog/](https://foobarto.me/blog/) · "
+            "[research/](https://foobarto.me/research/) · "
+            "[disclosures/](https://foobarto.me/disclosures/) · "
+            "[htb/](https://foobarto.me/htb/)",
         )
     )
     return "\n".join(lines)
