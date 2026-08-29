@@ -168,11 +168,8 @@ class UpdateProfileTests(unittest.TestCase):
                 1,
             )
             self.assertEqual(readme.count("\n- `2026-"), 4)
-            self.assertIn('\n<br>\n\n<p align="center">', readme)
-            self.assertIn(
-                '<a href="https://foobarto.me/blog/">blog/</a>', readme
-            )
             self.assertNotIn("Browse:", readme)
+            self.assertNotIn('<p align="center">', readme)
             self.assertIn(
                 "https://foobarto.me/htb/machines/atlas/", readme
             )

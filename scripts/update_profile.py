@@ -416,19 +416,6 @@ def signals_block(signals: Iterable[Signal]) -> str:
             f"- `{signal.date}` `{markdown_escape(signal.kind.lower())}` "
             f"— [{markdown_escape(signal.title)}]({signal.url})"
         )
-    lines.extend(
-        (
-            "",
-            "<br>",
-            "",
-            '<p align="center">',
-            '  <a href="https://foobarto.me/blog/">blog/</a> ·',
-            '  <a href="https://foobarto.me/research/">research/</a> ·',
-            '  <a href="https://foobarto.me/disclosures/">disclosures/</a> ·',
-            '  <a href="https://foobarto.me/htb/">htb/</a>',
-            "</p>",
-        )
-    )
     return "\n".join(lines)
 
 
