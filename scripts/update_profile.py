@@ -421,10 +421,12 @@ def signals_block(signals: Iterable[Signal]) -> str:
             "",
             "<br>",
             "",
-            "**Browse:** [blog/](https://foobarto.me/blog/) · "
-            "[research/](https://foobarto.me/research/) · "
-            "[disclosures/](https://foobarto.me/disclosures/) · "
-            "[htb/](https://foobarto.me/htb/)",
+            '<p align="center">',
+            '  <a href="https://foobarto.me/blog/">blog/</a> ·',
+            '  <a href="https://foobarto.me/research/">research/</a> ·',
+            '  <a href="https://foobarto.me/disclosures/">disclosures/</a> ·',
+            '  <a href="https://foobarto.me/htb/">htb/</a>',
+            "</p>",
         )
     )
     return "\n".join(lines)

@@ -28,7 +28,12 @@ curl -fsS https://foobarto.me/profile-signals.json | jq -c '.signals|sort_by(.da
 
 <br>
 
-**Browse:** [blog/](https://foobarto.me/blog/) · [research/](https://foobarto.me/research/) · [disclosures/](https://foobarto.me/disclosures/) · [htb/](https://foobarto.me/htb/)
+<p align="center">
+  <a href="https://foobarto.me/blog/">blog/</a> ·
+  <a href="https://foobarto.me/research/">research/</a> ·
+  <a href="https://foobarto.me/disclosures/">disclosures/</a> ·
+  <a href="https://foobarto.me/htb/">htb/</a>
+</p>
 <!-- profile-signals:end -->
 
 I take on focused security work: threat modeling, product and code review, AI-system review, and deep analysis of complex systems. See [consulting and contact details](https://foobarto.me/consulting/).
