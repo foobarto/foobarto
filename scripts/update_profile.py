@@ -419,7 +419,9 @@ def signals_block(signals: Iterable[Signal]) -> str:
     lines.extend(
         (
             "",
-            "[blog/](https://foobarto.me/blog/) · "
+            "<br>",
+            "",
+            "**Browse:** [blog/](https://foobarto.me/blog/) · "
             "[research/](https://foobarto.me/research/) · "
             "[disclosures/](https://foobarto.me/disclosures/) · "
             "[htb/](https://foobarto.me/htb/)",

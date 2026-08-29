@@ -168,6 +168,7 @@ class UpdateProfileTests(unittest.TestCase):
                 1,
             )
             self.assertEqual(readme.count("\n- `2026-"), 4)
+            self.assertIn("\n<br>\n\n**Browse:** [blog/]", readme)
             self.assertIn(
                 "https://foobarto.me/htb/machines/atlas/", readme
             )

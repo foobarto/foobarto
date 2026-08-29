@@ -8,7 +8,7 @@
 </a>
 <!-- profile-console:end -->
 
-> I trust boundaries I can inspect, automation I can audit, and claims I can reproduce.
+> **I trust boundaries I can inspect, automation I can audit, and claims I can reproduce.**
 
 ## What connects the work
 
@@ -26,7 +26,9 @@ curl -fsS https://foobarto.me/profile-signals.json | jq -c '.signals|sort_by(.da
 - `2026-05-26` `research` — [Fluency as Attack Surface](https://doi.org/10.5281/zenodo.20397965)
 - `2026-05-17` `htb` — [atlas — HTB machine writeup](https://foobarto.me/htb/machines/atlas/)
 
-[blog/](https://foobarto.me/blog/) · [research/](https://foobarto.me/research/) · [disclosures/](https://foobarto.me/disclosures/) · [htb/](https://foobarto.me/htb/)
+<br>
+
+**Browse:** [blog/](https://foobarto.me/blog/) · [research/](https://foobarto.me/research/) · [disclosures/](https://foobarto.me/disclosures/) · [htb/](https://foobarto.me/htb/)
 <!-- profile-signals:end -->
 
 I take on focused security work: threat modeling, product and code review, AI-system review, and deep analysis of complex systems. See [consulting and contact details](https://foobarto.me/consulting/).
