@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 150" role="img" aria-labelledby="title desc">
   <title id="title">Hack The Box profile signal for foobarto</title>
-  <desc id="desc">Elite Hacker, #284 global, level 124 Grandmaster grade 3, 501 user owns and 497 system owns. A WOPR-style world map decorates the panel.</desc>
+  <desc id="desc">Elite Hacker, #303 global, level 124 Grandmaster grade 3, 501 user owns and 497 system owns. A WOPR-style world map decorates the panel.</desc>
   <defs>
     <pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse">
       <rect width="4" height="1" fill="#000000" opacity="0.055"/>
@@ -122,7 +122,7 @@
     <line x1="328" y1="34" x2="928" y2="34" stroke="#244b31"/>
     <text x="328" y="60" fill="#6fa77a" font-size="10" letter-spacing="1">RANK</text>
     <text x="410" y="60" fill="#d8f5dc" font-size="14" font-weight="700">ELITE HACKER</text>
-    <text x="928" y="60" fill="#9fef00" font-size="12" text-anchor="end">#284 GLOBAL</text>
+    <text x="928" y="60" fill="#9fef00" font-size="12" text-anchor="end">#303 GLOBAL</text>
     <text x="328" y="88" fill="#6fa77a" font-size="10" letter-spacing="1">LEVEL</text>
     <text x="410" y="88" fill="#d8f5dc" font-size="14"><tspan font-weight="700">124</tspan><tspan fill="#6fa77a"> // </tspan>GRANDMASTER</text>
     <text x="928" y="88" fill="#9fef00" font-size="13" text-anchor="end" letter-spacing="2">●●●</text>
