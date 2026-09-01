@@ -21,6 +21,12 @@
 
 Most of my public work sits at the security-plus-AI-agents seam: isolated runtimes, explicit trust boundaries, capability-gated tools, and automation that leaves evidence behind. The pinned repositories are different implementations of that idea.
 
+[Strata](https://github.com/foobarto/strata) preserves the life of durable
+architecture decisions; [Cairn](https://github.com/foobarto/cairn) disciplines
+the implementation work around them. Together they keep design authority and
+execution evidence inspectable without collapsing design history into session
+state.
+
 <!-- profile-signals:start -->
 ## Latest signals
 
