@@ -3,7 +3,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./assets/signal-console-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="./assets/signal-console-light.svg">
-    <img alt="Hack The Box profile snapshot: Elite Hacker, global rank 300, level 124 Grandmaster grade 3, 509 user owns and 505 system owns. Open the public Hack The Box profile." src="./assets/signal-console-dark.svg">
+    <img alt="Hack The Box profile snapshot: Elite Hacker, global rank 275, level 124 Grandmaster grade 3, 510 user owns and 506 system owns. Open the public Hack The Box profile." src="./assets/signal-console-dark.svg">
   </picture>
 </a>
 <!-- profile-console:end -->
